@@ -27,7 +27,7 @@
       </a-entity>
 
       <!-- Terrain -->
-      <a-grid></a-grid>
+      <!-- <a-grid></a-grid> -->
 
       <!-- Checkpoints -->
       <a-entity position="1 0 1">
@@ -39,5 +39,20 @@
       <!-- Lighting -->
       <a-light type="ambient" color="#fff"></a-light>
     </a-scene>
+
+    ·<script>
+
+      var serviceWorkerIsSupported = 'serviceWorker' in navigator ? true : false
+      // Check that service workers are registered
+      if ( serviceWorkerIsSupported ) {
+              // Use the window load event to keep the page load performant
+              window.addEventListener('load', function(){
+                      // register your service worker
+                      navigator.serviceWorker.register('sw.js');
+                      // to use the precaching version
+                      // navigator.serviceWorker.register('sw-precaching.js');
+              });
+      }
+      </script>
   </body>
 </html>
